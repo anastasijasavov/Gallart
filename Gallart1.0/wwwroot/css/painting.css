@@ -1,0 +1,15 @@
+﻿body {
+}
+
+.info{
+    border:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.container {
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+.image img{
+  float:left;
+  width:100%;
+}

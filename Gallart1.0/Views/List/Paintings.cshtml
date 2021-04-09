@@ -1,0 +1,26 @@
+﻿@model Gallart.ViewModels.Logged.ExploreVM
+@using Gallart.Entities;
+@{
+    ViewData["Title"] = "Paintings";
+    Layout = "~/Views/Shared/_LoggedLayout.cshtml";
+}
+<link href="~/css/explore.css" rel="stylesheet" />
+<link href="C:\Users\Anastasija\.nuget\packages\bootstrap\4.6.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.css" rel="stylesheet" />
+<div class="container">
+
+    @foreach (Painting item in Model.Paintings)
+    {
+        <div class="grid-item">
+           
+            <div class="item">
+                <a href="/List/Painting?id=@item.Id">
+                    <img src="../..@item.Path.Substring(9)" />
+                </a>
+                <h2>@item.Name</h2>
+                <h2>@item.Artist</h2>
+
+            </div>
+            <a href="/List/RemoveFromList?id=@item.Id">Remove from this list</a>
+        </div>
+    }
+</div>

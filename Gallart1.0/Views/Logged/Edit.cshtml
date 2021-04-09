@@ -1,0 +1,63 @@
+﻿@model Gallart.ViewModels.Logged.EditVM
+
+@using Gallart.Entities;
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_LoggedLayout.cshtml";
+}
+<head>
+    <link href="~/css/settings.css" rel="stylesheet" />
+</head>
+
+
+@*a page for my account details and option for deleting the account and such*@
+<div class="body">
+    <img src="~/content/pointillism.jpg" />
+    <div class="my-acc">
+        <h2>My account</h2>
+        <form class="acc-info" action="/Logged/Edit" method="post">
+
+            @Html.HiddenFor(m => m.Id)
+            <div>
+                <div>
+                     <h3>First name</h3>
+                     <div>@Html.TextBoxFor(m => m.FirstName, new { @class = "input" })</div>
+                     <span class="redtext">@Html.ValidationMessageFor(m => m.FirstName)</span>
+                </div>
+                <div>
+                     <h3>Last name</h3>
+                    <div>@Html.TextBoxFor(m => m.LastName, new { @class = "input" })</div>
+                    <span class="redtext">@Html.ValidationMessageFor(m => m.LastName)</span>
+                </div>
+                <div>
+                    <h3>Username</h3>
+                    <div>@Html.TextBoxFor(m => m.Username, new { @class = "input" })</div>
+                    <span class="redtext">@Html.ValidationMessageFor(m => m.Username)</span>
+                </div>
+                <div>
+                    <h3>Email</h3>
+                    <div>@Html.TextBoxFor(m => m.Email, new { @class = "input" , @readonly = "readonly" })</div>
+                    <span class="redtext">@Html.ValidationMessageFor(m => m.Email)</span>
+                </div>
+                <div>
+                    <h3>Password</h3>
+                    <div>@Html.PasswordFor(m => m.Password, new { @class = "input", PasswordChar=true })</div>
+                    <span class="redtext">@Html.ValidationMessageFor(m => m.Password)</span>
+                </div>
+            </div>
+            <button type="submit">Save changes</button>
+        </form>
+    </div>
+    <div class="options">
+        <ul>
+            <li>                
+                <a href="/Users/Delete?id=@Model.Id">Delete account</a>
+            </li>
+            
+            <li>
+                <a href="~/Users/Logout">Log out</a>
+            </li>
+        </ul>
+    </div>
+</div>
+

@@ -1,0 +1,39 @@
+﻿@model Gallart.ViewModels.Logged.ExploreVM
+@using Gallart.Entities;
+
+@{
+    ViewData["Title"] = "Painting";
+    Layout = "~/Views/Shared/_LoggedLayout.cshtml";
+}
+<link href="~/css/painting.css" rel="stylesheet" />
+
+<body>
+
+    <div class="container">
+        <div class="image">
+            <img src="../..@Model.Painting.Path.Substring(9)" />
+        </div>
+        <div> Name:@Html.TextBoxFor(m => m.Painting.Name, new { @class = "info" })</div>
+        <div> Artist: @Html.TextBoxFor(m => m.Painting.Artist, new { @class = "info" })</div>
+        <div> Genre: @Html.TextBoxFor(m => m.Painting.Genre, new { @class = "info" })</div>
+        <div> Year: @Html.TextBoxFor(m => m.Painting.Year, new { @class = "info" })</div>
+
+        <!--<form action="/List/AddToThisList" method="post">-->
+        @*<input type="button" value="Add to list" action="/List/AddToThisList?id=@Model.Painting.PaintingId" />*@
+        <!--<select>
+            @if (Model.ListOfLists != null)
+            {
+                @foreach (List list in Model.ListOfLists)
+                {
+                    <option value="@list.Id">@list.Name</option>
+                }
+            }
+
+
+        </select>
+        <input type="submit" value="Save" />
+    </form>-->
+
+
+    </div>
+</body>

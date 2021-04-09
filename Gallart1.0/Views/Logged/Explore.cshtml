@@ -1,0 +1,69 @@
+﻿@model Gallart.ViewModels.Logged.ExploreVM
+
+@using  Gallart.Entities;
+
+@{
+    ViewData["Title"] = "Explore";
+    Layout = "~/Views/Shared/_LoggedLayout.cshtml";
+}
+<head>
+    <link href="~/css/explore.css" rel="stylesheet" />
+    <script src="~/js/masonry.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <link href="C:\Users\Anastasija\.nuget\packages\bootstrap\4.6.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+    <div>
+        <div class="grid">
+            <div class="grid-sizer"></div>
+            @foreach (Painting item in @Model.Paintings)
+            {
+                @*C:\Users\Anastasija\source\repos\Gallart1.0\Gallart1.0\wwwroot\content\ballerinas.jpg*@
+                <div class="grid-item">
+                    <a href="/List/Painting?id=@item.Id">
+                        <img src="../..@item.Path.Substring(9)" />
+                    </a>
+                    <h2>@item.Name</h2>
+                    <h2>@item.Artist</h2>
+                    @*ovde stavi hover opciju , da ne bude clickable*@
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Add to list</button>
+                        <div class="dropdown-content">
+                            @if (Model.ListOfLists != null)
+                            {
+                                @foreach (List list in Model.ListOfLists)
+                                {
+                                    <a href="/List/AddToThisList?paintingId=@item.Id&listId=@list.Id"> @list.Name</a>
+
+                                    @*<a href="/List/AddToThisList?id=@list.ListId?name=@item.PaintingId">@list.Name</a>*@
+                                }
+                            }
+
+                        </div>
+
+                    </div>
+                    <div class="makenewlist">
+                        <form method="post" action="/List/MakeNewList">
+                            <div class="makenew">
+                                @Html.TextBoxFor(u => u.List.Name)
+                            </div>
+                            <div class="submitbtn">
+                                <input type="submit" value="Make new list" action="/List/MakeNewList"> @*?id=@Model.ListOfPaintingLists*@
+
+                            </div>
+
+                        </form>
+                    </div>
+                   
+
+         </div>
+            }
+        </div>
+    </div>
+
+</body>
+

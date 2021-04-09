@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <script src="~/js/masonry.js"></script>
+</head>
+<body>
+    <header>
+       
+        <div class="header" id="top">
+            <div class="logo">
+                <img src="~/content/logo.png" />
+            </div>
+            <ul class="inlinewords">
+
+                <li>
+                    <a href="~/Logged/Explore">Explore</a>
+                </li>
+                <li>
+                    <a href="~/List/MyLists">My lists</a>
+                </li>
+                <li>
+                    <a href="~/Logged/Edit">Settings</a>
+                </li>
+
+                <li>
+                    <a href="~/Users/Logout">Log out</a>
+                </li>
+               
+            </ul>
+        </div>
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+
+    <footer>
+        <h4>All rights reserved.</h4>
+        <img src="~/content/fb.webp" />
+        <img src="~/content/ig.webp" />
+    </footer>
+
+</body>
+</html>

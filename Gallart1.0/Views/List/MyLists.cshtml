@@ -1,0 +1,55 @@
+﻿@model Gallart.ViewModels.Logged.ExploreVM
+
+@using Gallart.Entities;
+@{
+    ViewData["Title"] = "MyLists";
+    Layout = "~/Views/Shared/_LoggedLayout.cshtml";
+}
+<link href="~/css/mylists.css" rel="stylesheet" />
+@*a page for viewing the lists that you creating or even making a new list, like imdb my lists page*@
+<style>
+    footer {
+        position:absolute;
+        bottom:0;
+        width:100%;
+    }
+</style>
+<div class="container">
+
+    @foreach (List list in Model.ListOfLists)
+    {
+
+
+        <a href="/List/Paintings?id=@list.Id">@list.Name</a>
+       
+                <a href="/List/DeleteList?id=@list.Id"> Delete this list</a>
+                <a href="/List/Rename?id=@list.Id">Rename list</a>
+
+
+        <form action="/List/Rename" method="post">
+
+            <div class="rename">
+                <div>@Html.HiddenFor(u => u.List.Id)</div>
+                @Html.TextBoxFor(m => m.List.Name, new { @class = list.Id == ViewBag.id ? "show" : "hide", placeholder = list.Name, id = "renameId" })
+            </div>
+            @*<input class="hide" type="text" id="renameId" value="@list.Name" />*@
+
+            <input type="submit" class="@(list.Id == ViewBag.id ? "show" : "hide")" id="submitBtn" value="Save">
+        </form>
+
+
+
+
+    }
+    <form method="post" action="/List/MakeNewList">
+        <div class="makenew">
+            @Html.TextBoxFor(u => u.List.Name)
+        </div>
+        <div class="submitbtn">
+            <input type="submit" value="Make new list" action="/List/MakeNewList"> @*?id=@Model.ListOfPaintingLists*@
+
+        </div>
+
+    </form>
+    @*ovde stavi hidden block koji se pojavljuje kad se klikne na dugme gde mozes da dodas novu listu, samo ime upises i to je to*@
+</div>

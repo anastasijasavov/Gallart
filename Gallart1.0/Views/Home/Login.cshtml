@@ -1,0 +1,42 @@
+﻿@model Gallart.ViewModels.Home.LoginVM;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Log in";
+
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Log in</title>
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+<body>
+
+    <img src="~/content/second_story_sunlight.jpeg" />
+    <div class="login-card">
+
+        <div class="title">Log in</div>
+        <form action="/Home/Login" method="post">
+            <div>
+                <div>@Html.TextBoxFor(m => m.Username, new { placeholder = "Username...", @class = "input" })</div>
+            </div>
+            <span class="redtext">@Html.ValidationMessageFor(m => m.Username)</span>
+            <div>
+                <div>@Html.PasswordFor(m => m.Password, new { placeholder = "Password...", @class = "input" })</div>
+            </div>
+            <span class="redtext">@Html.ValidationMessageFor(m => m.Password)</span>
+            <div>
+                <span class="redtext">@Html.ValidationMessage("AuthenticationFailed")</span>
+            </div>
+            <div>
+                <button type="submit" value="Login">Log in</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>

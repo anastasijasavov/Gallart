@@ -1,0 +1,53 @@
+﻿@model Gallart.ViewModels.Users.CreateVM
+
+@{
+    ViewData["Title"] = "Sign up";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/signup.css" rel="stylesheet" />
+    <title>Sign up</title>
+</head>
+<body>
+    <img src="~/content/ballerinas.jpg" />
+    <div class="sign-up">
+
+        <div class="title">Sign up</div>
+        <form action="/Users/Create" method="post">
+
+            <div>
+                <div>@Html.TextBoxFor(m => m.FirstName, new { placeholder = "First name...", @class = "input" })</div>
+                <span class="redtext">@Html.ValidationMessageFor(m => m.FirstName)</span>
+            </div>
+            <div>
+                <div>@Html.TextBoxFor(m => m.LastName, new { placeholder = "Last name...", @class = "input" })</div>
+                <span class="redtext">@Html.ValidationMessageFor(m => m.LastName)</span>
+            </div>
+            <div>
+                <div>@Html.TextBoxFor(m => m.Email, new { placeholder = "Email...", @class = "input" })</div>
+                <span class="redtext">@Html.ValidationMessageFor(m => m.Email)</span>
+            </div>
+            <div>
+                <div>@Html.TextBoxFor(m => m.Username, new { placeholder = "Username...", @class = "input" })</div>
+                <span class="redtext">@Html.ValidationMessageFor(m => m.Username)</span>
+            </div>
+            <div>
+                <div>@Html.PasswordFor(m => m.Password, new { placeholder = "Password...", @class = "input" })</div>
+                <span class="redtext">@Html.ValidationMessageFor(m => m.Password)</span>
+            </div>
+            <div> <span class="redtext">@Html.ValidationMessage("CreateUserFailed")</span></div>
+            <div>
+                
+                <input type="submit" value="Create" class="button"   />
+
+                <a class="back" href="/Home/Index">Back</a>
+            </div>
+        </form>
+
+
+    </div>
+</body>
+</html>

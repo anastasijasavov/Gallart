@@ -1,0 +1,102 @@
+﻿* {
+    margin:0;
+    padding:0;
+
+}
+
+.body {
+    background-attachment: fixed;
+    min-height:100%;
+}
+.backimg img {
+    width: 100%;
+    height: auto;
+}
+.header{
+    height:50px;
+    overflow:hidden;
+
+}
+.header .logo img {
+    float: left;
+    width: 6%;
+    margin-top: -25px;
+}
+.inlinewords {
+    overflow:hidden;
+    margin:0;
+    float:right;
+    display:inline-flex;
+}
+.inlinewords li{
+    list-style-type:none;
+    padding:5px;
+    margin:5px;
+   
+}
+    .inlinewords a {
+        text-decoration: none;
+        color: black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+.rene {
+    background: inherit;
+    position: relative;
+}
+
+
+.renecard {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width:20%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    backdrop-filter: blur(5px) brightness(1.05);
+    box-shadow: 5px 4px 19px -3px rgba(0,0,0,0.75);
+    padding: 15px;
+    border-radius: 30px;
+}
+    .renecard input {
+        font-size: 16px;
+        border: none;
+        font-family: Verdana;
+        border-radius: 20px;
+        padding: 7px;
+        margin: 5px;
+    }
+    .section2 img{
+        width:30%;
+        height:auto;
+        float:left;
+    }
+    .section2{
+        float:left;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .section2::after{
+        clear:both;
+    }
+
+
+footer {
+    height: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #e0f2f1;
+    clear: both;
+    overflow: hidden;
+   
+}
+footer img{
+    float: right;
+    width:30px;
+    height:auto;
+    padding-top:20px;
+    padding-bottom:20px;
+    margin-right:10px;
+}
+footer h4{
+    float:left;
+    padding:20px;
+    margin:0;
+}
+

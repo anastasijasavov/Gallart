@@ -1,0 +1,69 @@
+﻿* {
+    margin:0;
+    padding:0;
+}
+body img {
+    width:100%;
+    height:auto;
+    position:relative;
+}
+.sign-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%,-50%);
+    backdrop-filter: blur(5px) brightness(1.05);
+    box-shadow: 5px 4px 19px -3px rgba(0,0,0,0.75);
+    border-radius:30px;
+}
+
+.title {
+    text-align:center;
+    font-size:25px;
+    color:white;
+    font-family:Verdana;
+    padding:20px;
+
+}
+.sign-up .input {
+    border-radius:20px;
+    font-size:15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border:none;
+    width:90%;
+    height:25px;
+    padding: 7px 5px;
+    margin:5px 10px 10px 10px;
+}
+
+.sign-up .button{
+    border:none;
+    text-decoration:none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:20px;
+    padding:10px;
+    margin:0 0 10px 15px;
+   
+    width:20%;
+    border-radius:20px;
+}
+.redtext{
+    color:red;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:15px;
+    margin-left:20px;
+}
+.back {
+    text-decoration: none;
+    color: red;
+    font-family: verdana;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 30px;
+    float: right;
+    margin-right: 10%;
+}
+.redtext:last-child{
+    margin-bottom:10px;
+}

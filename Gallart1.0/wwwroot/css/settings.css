@@ -1,0 +1,105 @@
+﻿*{
+    margin:0;
+    padding:0;
+}
+.body img {
+    width:100%;
+    height:auto;
+    position:relative;
+}
+.my-acc {
+    position: absolute;
+    border-radius: 30px;
+    top: 20%;
+    left: 10%;
+    width: 35%;
+    backdrop-filter: blur(5px) brightness(1.1);
+    box-shadow: 5px 4px 19px -3px rgba(0,0,0,0.75);
+}
+.my-acc h2 {
+    font-size:20px;
+    margin-left:35px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-top:15px;
+    color:white;
+}
+.acc-info{
+    transform:translateX(5%);
+}
+    .acc-info button {
+        border: none;
+        font-size: 18px;
+        background-color: #83E573;
+        color:white;
+        border-radius:20px;
+        padding:8px 10px;
+        margin-left:5px;
+        margin-bottom:15px;
+    }
+    .acc-info .input {
+        text-decoration: none;
+        list-style-type: none;
+        font-size: 18px;
+        border:none;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 20px;
+        padding: 8px 5px;
+        margin: 20px 5px 20px 5px;
+        width: 80%;
+        background-color: white;
+        color: #787878;
+    }
+.options {
+    position: absolute;
+    margin:10px;
+    top: 25%;
+    padding: 15px 0;
+    right: 10%;
+    backdrop-filter: blur(5px) brightness(1.05);
+    box-shadow: 5px 4px 15px -3px rgba(0,0,0,0.75);
+    border-radius: 30px;
+    width: 15%;
+}
+    .options li {
+        list-style-type: none;
+        text-align:center;
+        border:none;
+        margin:10px;
+    }
+    .options a {
+        text-align: center;
+        border: none;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 20px;
+        padding: 8px 5px;
+        margin: 10px;
+        width: 65%;
+        background-color: #FFAEAE;
+        color: white;
+    }
+    .options li button {
+        text-align:center;
+        border: none;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-radius: 20px;
+        padding: 8px 5px;
+        margin: 10px;
+        width: 65%;
+        background-color: #FFAEAE;
+        color:white;
+    }
+#edit {
+    background-color: white;
+    color: #787878;
+}
+.acc-info h3 {
+    color: white;
+    font-family: Verdana;
+    /* color: black; */
+    padding: 20px 0 0px 0;
+}
+
